@@ -1,10 +1,12 @@
-from helper import Org
+#!/usr/bin/env python
 
-print('Distance from Origin Calculator')
+from flask import Flask
 
-x=int(input('Enter X Coordinate '))
-y=int(input('Enter Y Coordinate '))
+app = Flask(__name__)
 
-dist=Org(x,y)
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
 
-print('Distance from Origin is ',dist,' units')
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=8080)
